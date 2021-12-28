@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Source+Sans+3:ital,wght@0,300;0,400;1,400&display=swap');
+
+body {
+    display: inline;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    user-select: none;
+}
+
+.backgroundBody {
+    background-color: #252526;
+}
+
+.startOpt {
+    color: rgb(55, 148, 255);
+}
+
+.startOpt:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.startScreenText {
+    font-weight: lighter;
+    text-align: left;
+    color: rgb(218, 218, 218);
+
+}
+
+.recentScreenText {
+    font-weight: lighter;
+    text-align: left;
+    color: rgb(218, 218, 218);
+
+}
+
+div {
+    display: inline-grid;
+}
+
+.buttons {
+    padding-right: 10px;
+    margin-left: 10px;
+}
+
+p {
+    margin: 0px;
+    color: rgb(218, 218, 218);
+}

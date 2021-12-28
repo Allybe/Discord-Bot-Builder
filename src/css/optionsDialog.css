@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Source+Sans+3:ital,wght@0,300;0,400;1,400&display=swap');
+
+body {
+    margin-top: 20px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    user-select: none;
+}
+
+.backgroundBody {
+    background-color: #252526;
+}
+
+.nameDiv {
+    position: relative;
+    width: 250px;
+    height: 44px;
+    line-height: 44px;
+}
+
+.nameLabel {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: rgb(218, 218, 218);
+    transition: 0.2s all;
+    cursor: text;
+}
+
+.nameInput {
+    background-color: transparent;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid rgb(218, 218, 218);
+    box-shadow: none;
+    color: rgb(218, 218, 218);
+}
+
+.nameInput:invalid {
+    outline: 0;
+}
+
+.nameInput:focus,
+.nameInput:valid {
+    border-color: rgb(218, 218, 218);
+}
+
+.nameInput:focus~label {
+    font-size: 14px;
+    top: -24px;
+}
+
+.tokenDiv {
+    margin-top: 20px;
+    position: relative;
+    width: 250px;
+    height: 44px;
+    line-height: 44px;
+}
+
+.tokenLabel {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: rgb(218, 218, 218);
+    transition: 0.2s all;
+    cursor: text;
+}
+
+.tokenInput {
+    background-color: transparent;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid rgb(218, 218, 218);
+    box-shadow: none;
+    color: rgb(218, 218, 218);
+}
+
+.tokenInput:invalid {
+    outline: 0;
+}
+
+.tokenInput:focus,
+.tokenInput:valid {
+    border-color: rgb(218, 218, 218);
+}
+
+.tokenInput:focus~label {
+    font-size: 14px;
+    top: -24px;
+}
+
+.prefixDiv {
+    margin-top: 20px;
+    position: relative;
+    width: 250px;
+    height: 44px;
+    line-height: 44px;
+}
+
+.prefixLabel {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: rgb(218, 218, 218);
+    transition: 0.2s all;
+    cursor: text;
+}
+
+.prefixInput {
+    background-color: transparent;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid rgb(218, 218, 218);
+    box-shadow: none;
+    color: rgb(218, 218, 218);
+}
+
+.prefixInput:invalid {
+    outline: 0;
+}
+
+.prefixInput:focus,
+.prefixInput:valid {
+    border-color: rgb(218, 218, 218);
+}
+
+.prefixInput:focus~label {
+    font-size: 14px;
+    top: -24px;
+}
+
+.optionsSaveButton {
+    
+}

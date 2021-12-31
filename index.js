@@ -1,13 +1,16 @@
+/////
+/////// Start up code
+/////
+
 const {
   app,
   BrowserWindow,
   screen,
-  ipcMain 
-} = require('electron')
+  ipcMain,
+  dialog
+} = require('electron');
+const { event } = require('jquery');
 const path = require('path');
-const {
-  start
-} = require('repl');
 
 function createWindow() {
 
@@ -82,13 +85,44 @@ app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
 
-//Start Code ^^^
+/////
+/////// Dialog Creating Code
+////
 
-//IPC Options Code
-function createOptions() {
+function newDialog(w, h, onTop, filePath, moveTop) {
 
+  const dialogWindow = new BrowserWindow({
+    webPreferences: {
+      nodeIntegration: true,
 
+      nodeIntegrationInWorker: true,
 
+      contextIsolation: false,
 
+      devTools: true
+    }
+  })
+
+  dialogWindow.setSize(w, h, false);
+  dialogWindow.loadFile(`${filePath}`)
+
+  if (moveTop === true) {
+
+    dialogWindow.moveTop();
+  
+  }
 
 }
+
+ipcMain.on('dialog:newBot', () => {
+
+  newDialog(400, 400, true, 'src/optionsDialog.html', true);
+
+})
+
+ipcMain.on('dialog:error', (event, arg) => {
+
+  console.log(arg);
+
+
+})

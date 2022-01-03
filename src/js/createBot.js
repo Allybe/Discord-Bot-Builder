@@ -2,7 +2,7 @@ const { ipcRenderer } = require('electron');
 const fs = require('fs');
 const path = require('path');
 
-window.onclick = () => {
+window.onload = () => {
 
   document.getElementById('submitData').addEventListener('click', () => {
 

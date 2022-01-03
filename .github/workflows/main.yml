@@ -1,0 +1,30 @@
+name: Build Electron App
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+    
+jobs:
+  bulid:
+  
+    runs-on: windows-latest
+    
+    strategy:
+      matrix:
+        node-version: [16.x]
+      
+    steps:
+    - name: Get All Dependencies + Electron Forge
+      run: |
+        npm install 
+        npm install --save-dev @electron-forge/cli
+    - name: Build The Program
+      run: | 
+        npx electron-forge import
+        npm run make
+
+        
+
+        

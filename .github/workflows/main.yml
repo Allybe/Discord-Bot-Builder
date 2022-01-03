@@ -16,15 +16,14 @@ jobs:
         node-version: [16.x]
       
     steps:
-    - name: Get All Dependencies + Electron Forge
-      run: |
-        npm install 
-        npm install --save-dev @electron-forge/cli
-    - name: Build The Program
-      run: | 
-        npx electron-forge import
-        npm run make
-
+    - name: Get All Dependencies
+      run: npm install 
+    - name: Get Electron Forge
+      run: npm install --save-dev @electron-forge/cli
+    - name: Import Electron Forge
+      run: npx electron-forge import
+    - name: Build
+      run: npm run make
         
 
         

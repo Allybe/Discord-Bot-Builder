@@ -1,3 +1,4 @@
 /.vs
 /.vscode
 /node_modules
+out/

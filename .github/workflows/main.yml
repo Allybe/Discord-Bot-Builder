@@ -37,4 +37,8 @@ jobs:
     - name: install dependencies
       run: npm install
     - name: build
+<<<<<<< HEAD
       run: npm run make
+=======
+      run: npm run make
+>>>>>>> bf4f70e2a8ba17ce12a1f4401cb6993041da3c58

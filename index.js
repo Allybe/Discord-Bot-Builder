@@ -9,7 +9,6 @@ const {
   ipcMain,
   dialog
 } = require('electron');
-const { event } = require('jquery');
 const path = require('path');
 
 function createWindow() {
@@ -32,43 +31,18 @@ function createWindow() {
 
       contextIsolation: false,
 
-      devTools: true
-
-
-    }
-  })
-
-  // Create the start screen window 
-  // It's a child to the main window
-  const startWindow = new BrowserWindow({
-    webPreferences: {
-
-      height: 800,
-
-      width: 600,
-
-      alwaysOnTop: true,
-
-      nodeIntegration: true,
-
-      nodeIntegrationInWorker: true,
-
-      contextIsolation: false,
-
       devTools: true,
-
+      
       preload: path.join(__dirname, 'checks.js')
 
+
     }
   })
 
 
-  mainWindow.removeMenu();
   mainWindow.maximize();
   mainWindow.loadFile('src/index.html')
 
-  startWindow.loadFile('src/startScreen.html')
-  startWindow.moveTop();
 }
 
 
@@ -109,7 +83,7 @@ function newDialog(w, h, onTop, filePath, moveTop) {
   if (moveTop === true) {
 
     dialogWindow.moveTop();
-  
+
   }
 
 }
@@ -117,12 +91,5 @@ function newDialog(w, h, onTop, filePath, moveTop) {
 ipcMain.on('dialog:newBot', () => {
 
   newDialog(400, 400, true, 'src/optionsDialog.html', true);
-
-})
-
-ipcMain.on('dialog:error', (event, arg) => {
-
-  console.log(arg);
-
 
 })

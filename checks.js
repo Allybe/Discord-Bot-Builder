@@ -1,5 +1,4 @@
 const fs = require('fs');
-const path = require('path');
 
 //Checks if the directory that projects are stored in exists
 fs.access("./projects", function (error) {

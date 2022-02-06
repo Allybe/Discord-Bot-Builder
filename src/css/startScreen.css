@@ -1,23 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Source+Sans+3:ital,wght@0,300;0,400;1,400&display=swap');
 
+html,
 body {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+div {
+    display: inline-grid;
+}
+
+p {
+    margin: 0px;
+    color: rgb(218, 218, 218);
+}
+
+.mainBody {
+    z-index: 0;
     display: inline;
     font-family: 'Source Sans 3', sans-serif;
     font-size: 14px;
     user-select: none;
-}
-
-.backgroundBody {
     background-color: #252526;
+    min-height: 100%;
+    min-width: 100%;
 }
 
-.startOpt {
-    color: rgb(55, 148, 255);
+.selection {
+    z-index: 1;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    user-select: none;
+    background-color: #252526;
+    display: inline;
 }
 
-.startOpt:hover {
-    cursor: pointer;
-    text-decoration: underline;
+.buttons {
+    padding-right: 10px;
+    margin-left: 10px;
 }
 
 .startScreenText {
@@ -27,23 +47,19 @@ body {
 
 }
 
+.startOpt {
+    text-align: left;
+    color: rgb(55, 148, 255);
+}
+
+.startOpt:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .recentScreenText {
     font-weight: lighter;
     text-align: left;
     color: rgb(218, 218, 218);
 
-}
-
-div {
-    display: inline-grid;
-}
-
-.buttons {
-    padding-right: 10px;
-    margin-left: 10px;
-}
-
-p {
-    margin: 0px;
-    color: rgb(218, 218, 218);
 }

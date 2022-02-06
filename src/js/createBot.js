@@ -1,6 +1,7 @@
-const { ipcRenderer } = require('electron');
+const {
+  ipcRenderer
+} = require('electron');
 const fs = require('fs');
-const path = require('path');
 
 window.onload = () => {
 
@@ -11,12 +12,15 @@ window.onload = () => {
     let prefix = document.getElementById('botPrefix').value;
 
 
-    //Fix this code later
-    //if(name, token, prefix === "") {
-
-     //   return ipcRenderer.send('dialog:error', "A name is needed to create a bot!")
-
-    //}
+    if (name === "") {
+      return ipcRenderer.send('dialog:error', "You need to fill the name field!");
+    }
+    if (token === "") {
+      return ipcRenderer.send('dialog:error', "You need to fill the token field!");
+    }
+    if (prefix === "") {
+      return ipcRenderer.send('dialog:error', "You need to fill the prefix field!")
+    }
 
 
     let configData =
@@ -40,9 +44,9 @@ window.onload = () => {
 
       console.log(err);
 
-    })
+    });
 
 
-  })
+  });
 
 }

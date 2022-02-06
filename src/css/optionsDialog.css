@@ -46,7 +46,12 @@ body {
 
 .nameInput:focus,
 .nameInput:valid {
+    top: -24px;
     border-color: rgb(218, 218, 218);
+}
+
+.nameInput:not(:placeholder-shown)~label {
+    top: -24px;
 }
 
 .nameInput:focus~label {
@@ -93,6 +98,10 @@ body {
     border-color: rgb(218, 218, 218);
 }
 
+.tokenInput:not(:placeholder-shown)~label {
+    top: -24px;
+}
+
 .tokenInput:focus~label {
     font-size: 14px;
     top: -24px;
@@ -137,11 +146,11 @@ body {
     border-color: rgb(218, 218, 218);
 }
 
-.prefixInput:focus~label {
-    font-size: 14px;
+.prefixInput:not(:placeholder-shown)~label {
     top: -24px;
 }
 
-.optionsSaveButton {
-    
+.prefixInput:focus~label {
+    font-size: 14px;
+    top: -24px;
 }

@@ -1,29 +1,40 @@
-name: Build Electron App
+#Credit to https://github.com/erikhofer. I didn't write this.
+name: Build
+on: [push, pull_request]
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-    
 jobs:
-  bulid:
-  
-    runs-on: windows-latest
-    
-    strategy:
-      matrix:
-        node-version: [16.x]
-      
+  build_on_linux:
+    runs-on: ubuntu-latest
     steps:
-    - name: Get All Dependencies
-      run: npm install 
-    - name: Get Electron Forge
-      run: npm install --save-dev @electron-forge/cli
-    - name: Import Electron Forge
-      run: npx electron-forge import
-    - name: Build
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@master
+      with:
+        node-version: 14
+    - name: install dependencies
+      run: npm install
+    - name: build
       run: npm run make
-        
 
-        
+  build_on_mac:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@master
+      with:
+        node-version: 14
+    - name: install dependencies
+      run: npm install
+    - name: build
+      run: npm run make
+      
+  build_on_win:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@master
+      with:
+        node-version: 14
+    - name: install dependencies
+      run: npm install
+    - name: build
+      run: npm run make

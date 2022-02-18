@@ -1,14 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Source+Sans+3:ital,wght@0,300;0,400;1,400&display=swap');
 
-body {
-    margin-top: 20px;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 14px;
-    user-select: none;
+.newBotForm {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    margin: auto;
+    padding: 10px;
+    z-index: 2;
+    display: none;
 }
 
-.backgroundBody {
-    background-color: #252526;
+.formContent {
+    display: block;
+    background-color: #3B3B3D;
+    margin: auto;
+    width: auto;
+    padding: 10px;
 }
 
 .nameDiv {

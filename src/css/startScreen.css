@@ -16,7 +16,7 @@ p {
 }
 
 .mainBody {
-    z-index: 0;
+    z-index: 1;
     display: inline;
     font-family: 'Source Sans 3', sans-serif;
     font-size: 14px;

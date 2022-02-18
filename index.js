@@ -92,4 +92,8 @@ ipcMain.on('dialog:newBot', () => {
 
   newDialog(400, 400, true, 'src/optionsDialog.html', true);
 
+});
+
+ipcMain.on("dialog:error",(event, args) => {
+  console.log(args);
 })

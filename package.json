@@ -2,7 +2,7 @@
   "name": "discord-bot-builder",
   "version": "0.0.1",
   "description": "A Discord Bot Builder",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "start": "electron-forge start",
     "test": "echo \"Error: no test specified\" && exit 1",

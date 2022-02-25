@@ -10,10 +10,12 @@ const {
       $(".newBotForm").show();
     });
   
+    //Creates a new directory with the bot infomation
     $("#submitData").click(() => {
 
         let input = [`${$("#botName").val()}`, `${$('#botToken').val()}`, `${$('#botPrefix').val()}`]
 
+        //Checks for invalid bot data
         for (i = 0; i < input.length; i++) {
           if (input[i] == "") {
             return ipcRenderer.send("dialog:error", "You need to fill out each field");

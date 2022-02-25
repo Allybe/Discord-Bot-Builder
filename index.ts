@@ -33,7 +33,7 @@ function createWindow() {
 
       devTools: true,
       
-      preload: path.join(__dirname, 'checks.js')
+      preload: path.join(__dirname, 'checks.ts')
 
 
     }

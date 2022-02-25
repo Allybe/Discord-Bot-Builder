@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="css/startScreen.css">
     <link rel="stylesheet" href="css/optionsDialog.css">
-    <script src="js/buttonFuctions.js"></script>
+    <script src="js/buttonFuctions.ts"></script>
     <title>Discord Bot Builder</title>
 </head>
 
@@ -40,32 +40,13 @@
 
     </div>
 
-
-    <div class="newBotForm" id="newBotForm">
-        <div class="formContent">
-            <form>
-
-                <div class="nameDiv">
-                    <input placeholder=" " class="nameInput" type="text" id="botName">
-                    <label class="nameLabel" for="botName">Bot Name</label>
-                </div>
-
-                <div class="tokenDiv">
-                    <input placeholder=" " class="tokenInput" type="text" id="botToken">
-                    <label class="tokenLabel" for="botToken">Bot Token</label>
-                </div>
-
-                <div class="prefixDiv">
-                    <input placeholder=" " class="prefixInput" type="text" id="botPrefix">
-                    <label class="prefixLabel" for="botPrefix">Bot Prefix</label>
-                </div>
-
-                <input class="optionsSaveButton" type="button" value="Save" id="submitData">
-
-            </form>
+    <div class="inputContainer">
+        <div class="inputContent">
+            <div class="inputDiv">
+                <input type="text" class="input">
+            </div>
         </div>
     </div>
-
 
 </body>
 

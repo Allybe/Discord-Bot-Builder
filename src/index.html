@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="css/startScreen.css">
     <link rel="stylesheet" href="css/optionsDialog.css">
-    <script src="js/buttonFuctions.ts"></script>
+    <script src="js/input/inputSubmit.ts"></script>
     <title>Discord Bot Builder</title>
 </head>
 
@@ -42,11 +42,22 @@
 
     <div class="inputContainer">
         <div class="inputContent">
-            <div class="inputDiv">
-                <input type="text" class="input">
-            </div>
+            <form style="width:100%; height:100%;" id="inputForm">
+                <div class="inputDiv">
+                    <input type="text" class="input" id="inputElement">
+                </div>
+            </form>
         </div>
     </div>
+
+    <script>
+        //Place for basic code
+        $("#newBot").click(() => {
+            $('#inputElement').attr('placeholder', 'Name your bot...');
+
+            $(".inputContainer").show();
+        });
+    </script>
 
 </body>
 

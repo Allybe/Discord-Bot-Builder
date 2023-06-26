@@ -1,10 +1,10 @@
-window.addEventListener('DOMContentLoaded', () => {
-    const replaceText = (selector, text) => {
-        const element = document.getElementById(selector)
-        if (element) element.innerText = text
-    }
+import * as fs from 'fs';
+import * as path from 'path';
 
-    for (const dependency of ['chrome', 'node', 'electron']) {
-        replaceText(`${dependency}-version`, process.versions[dependency])
-    }
-})
+var botDirPath = path.join(__dirname, '/bot');
+
+var doesBotDirExists = fs.existsSync(botDirPath);
+
+if (!doesBotDirExists) {
+    fs.mkdirSync(botDirPath);
+}

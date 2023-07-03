@@ -1,13 +1,47 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
-    <title>Hello World!</title>
-    <link href="./css/output.css" rel="stylesheet" />
-  </head>
-  <body>
-    <button type="button">Create bot</button>
-  </body>
+<html class="h-full w-full">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <title>Main</title>
+  <link href="./css/output.css" rel="stylesheet" />
+</head>
+
+<body class="w-full h-full font-inter flex flex-row">
+  <div class="Section1 w-2/5 h-full bg-background">
+    <div class="DiscordBotBuilder w-[35rem] h-12 left-12 top-12 absolute text-white text-4xl font-normal">
+      <p>Discord Bot
+        Builder.</p>
+    </div>
+    <div class="Bots w-[21rem] h-12 left-12 top-32 absolute text-white text-3xl font-normal">
+      <p>Bots.<br /></p>
+    </div>
+    <div class="NewBot w-[21rem] h-12 left-12 top-44 absolute text-blue-300 text-2xl font-normal">
+      <p class="hover:cursor-pointer hover:underline">Build a bot...<br /></p>
+    </div>
+    <div class="OpenBot w-[21rem] h-12 left-12 top-56 absolute text-blue-300 text-2xl font-normal">
+      <p class="hover:cursor-pointer hover:underline">Open
+        bot...<br /><br /></p>
+    </div>
+    <div class="Recent w-56 h-12 left-[26rem] top-32 absolute text-white text-3xl font-normal">
+      <p>Recent.</p>
+    </div>
+    <div class="ARecentBot w-56 h-12 left-[26rem] top-44 absolute text-blue-300 text-2xl font-normal">
+      <p class="hover:cursor-pointer hover:underline">A Recent Bot</p>
+    </div>
+    <div class="ARecentBot w-56 h-12 left-[26rem] top-56 absolute text-blue-300 text-2xl font-normal">
+      <p class="hover:cursor-pointer hover:underline">A Recent Bot</p>
+    </div>
+    <div class="ARecentBot w-56 h-12 left-[26rem] top-[17rem] absolute text-blue-300 text-2xl font-normal">
+      <p class="hover:cursor-pointer hover:underline">A Recent Bot</p>
+    </div>
+    <div class="More w-56 h-12 left-[26rem] top-[19rem] absolute text-blue-300 text-xl font-normal">
+      <p class="hover:cursor-pointer hover:underline">More...</p>
+    </div>
+  </div>
+  <div class="Section2 w-3/5 h-full bg-neutral-900 shadow-xl"></div>
+</body>
+
 </html>

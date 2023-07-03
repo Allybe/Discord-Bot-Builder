@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npx tailwindcss -i ./src/css/input.css -o ./dist/web/css/output.css && tsc && electron-forge start",
     "package": "npx tailwindcss -i ./src/css/input.css -o ./dist/web/css/output.css && tsc && electron-forge package",
-    "make": "npx tailwindcss -i ./src/css/input.css -o ./dist/web/css/output.css && tsc && electron-forge make"
+    "make": "npx tailwindcss -i ./src/css/input.css -o ./dist/web/css/output.css && tsc && electron-forge make",
+    "webTest": "npx tailwindcss -i ./src/css/input.css -o ./dist/web/css/output.css --watch" 
   },
   "repository": {
     "type": "git",

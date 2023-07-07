@@ -4,10 +4,10 @@
   "description": "A powerful peice of software to help make Discord bots easier.",
   "main": "dist/index.js",
   "scripts": {
-    "start": "npx tailwindcss -i ./src/css/input.css -o ./dist/web/css/output.css && tsc && electron-forge start",
-    "package": "npx tailwindcss -i ./src/css/input.css -o ./dist/web/css/output.css && tsc && electron-forge package",
-    "make": "npx tailwindcss -i ./src/css/input.css -o ./dist/web/css/output.css && tsc && electron-forge make",
-    "webTest": "npx tailwindcss -i ./src/css/input.css -o ./dist/web/css/output.css --watch" 
+    "start": "npx tailwindcss -i ./src/web/css/input.css -o ./src/web/css/output.css && tsc && electron-forge start",
+    "package": "npx tailwindcss -i ./src/web/css/input.css -o ./src/web/css/output.css && tsc && electron-forge package",
+    "make": "npx tailwindcss -i ./src/web/css/input.css -o ./src/web/css/output.css && tsc && electron-forge make",
+    "webTest": "npx tailwindcss -i ./src/web/css/input.css -o ./src/web/css/output.css --watch" 
   },
   "repository": {
     "type": "git",

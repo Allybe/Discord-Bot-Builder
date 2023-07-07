@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="h-full w-full">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <title>Main</title>
+    <link href="./css/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="w-full h-full font-inter flex flex-row bg-background">
+    <div class="w-2/5 h-full bg-background flex flex-col text-white z-0">
+      <div class="top-12 left-12 absolute">
+        <h1 class="text-4xl">Discord Bot Builder.</h1>
+        <p class="text-2xl text-blue-400">Start.</p>
+        <div class="flex flex-row mt-6">
+          <div class="flex flex-row">
+            <div class="w-32 h-0 absolute origin-top-left rotate-90 border border-white"></div>
+            <div class="flex flex-col ml-4">
+              <h1 class="text-3xl">Bots.</h1>
+              <p class="text-xl text-blue-400 mt-2">New Bot</p>
+              <p class="text-xl text-blue-400">Import Bot</p>
+            </div>
+          </div>
+          <div class="flex flex-row ml-48">
+            <div class="w-32 h-0 absolute origin-top-left rotate-90 border border-white"></div>
+            <div class="flex flex-col ml-4">
+              <h1 class="text-3xl">Recent</h1>
+              <div id="recents" class="mt-2">
+                <p class="text-xl text-blue-400"></p>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="w-3/5 h-full bg-background-1 z-20">\</div>
+
+    <script src="../../dist/web/js/components/componentsMananger.js"></script>
+  </body>
+</html>

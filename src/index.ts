@@ -10,11 +10,12 @@ function createWindow() {
         width: width,
         height: height,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
+            preload: path.join(__dirname, 'preload.js'),
+            nodeIntegration: true,
         }
     })
 
-    win.loadFile('dist/web/index.html')
+    win.loadFile('src/web/index.html');
 }
 
 app.whenReady().then(() => {

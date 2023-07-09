@@ -6,7 +6,7 @@ export const component:Command = {
     template: "<button>${text}</button>",
     data: {
         getText: function() {
-            return 'Recents';
+            
         }
     },
     methods: {

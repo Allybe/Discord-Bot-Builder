@@ -1,19 +1,21 @@
-import { app, BrowserWindow, ipcMain, screen } from 'electron';
-import * as path from 'path';
+const { app, BrowserWindow } = require('electron');
 
 if (require('electron-squirrel-startup')) app.quit();
 
 function createWindow() {
-    const { width, height } = screen.getPrimaryDisplay().workAreaSize
+    const { width, height } = require('electron').screen.getPrimaryDisplay().workAreaSize;
 
     const win = new BrowserWindow({
         width: width,
         height: height,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js'),
             nodeIntegration: true,
-        }
-    })
+            contextIsolation: false,
+            enableRemoteModule: true,
+            webSecurity: false,
+            nodeIntegrationInWorker: true,
+        },
+    });
 
     win.loadFile('src/web/index.html');
 }

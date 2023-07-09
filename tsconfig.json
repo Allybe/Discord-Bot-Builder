@@ -1,13 +1,11 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
+    "module": "CommonJS",
     "moduleResolution": "NodeNext",
     "target": "ES2020",
     "sourceMap": false,
     "outDir": "dist",
     "resolveJsonModule": true,
-    "strict": false,
-    "allowJs": true,
   },
   "include": ["src/**/*"]
 }

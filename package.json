@@ -7,7 +7,7 @@
     "start": "npx tailwindcss -i ./src/web/css/input.css -o ./src/web/css/output.css && tsc && electron-forge start",
     "package": "npx tailwindcss -i ./src/web/css/input.css -o ./src/web/css/output.css && tsc && electron-forge package",
     "make": "npx tailwindcss -i ./src/web/css/input.css -o ./src/web/css/output.css && tsc && electron-forge make",
-    "webTest": "npx tailwindcss -i ./src/web/css/input.css -o ./src/web/css/output.css --watch" 
+    "webTest": "npx tailwindcss -i ./src/web/css/input.css -o ./src/web/css/output.css --watch"
   },
   "repository": {
     "type": "git",
@@ -15,6 +15,7 @@
   },
   "author": "Allison",
   "license": "MIT",
+  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Allybe/Discord-Bot-Builder/issues"
   },
@@ -33,6 +34,7 @@
   },
   "dependencies": {
     "@electron-forge/maker-dmg": "^6.2.1",
+    "@types/node": "^20.4.0",
     "electron-squirrel-startup": "^1.0.0"
   }
 }

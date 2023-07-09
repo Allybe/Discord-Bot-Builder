@@ -2,11 +2,6 @@
 <html class="h-full w-full">
   <head>
     <meta charset="UTF-8" />
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
     <title>Main</title>
     <link href="./css/output.css" rel="stylesheet" />
   </head>
@@ -29,8 +24,8 @@
             <div class="w-32 h-0 absolute origin-top-left rotate-90 border border-white"></div>
             <div class="flex flex-col ml-4">
               <h1 class="text-3xl">Recent</h1>
-              <div id="recents" class="mt-2">
-                <p class="text-xl text-blue-400"></p>
+              <div id="recents" class="mt-2 text-xl text-blue-400">
+                <button>test</button>
               </div>
             </div>
           </div> 
@@ -39,6 +34,10 @@
     </div>
     <div class="w-3/5 h-full bg-background-1 z-20">\</div>
 
+    <script> var exports = {};</script>
     <script src="../../dist/web/js/components/componentsMananger.js"></script>
+    <script>
+      const componentsManager = new ComponentsManager("index");
+    </script>
   </body>
 </html>

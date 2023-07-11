@@ -16,16 +16,15 @@
             <div class="w-32 h-0 absolute origin-top-left rotate-90 border border-white"></div>
             <div class="flex flex-col ml-4">
               <h1 class="text-3xl">Bots.</h1>
-              <p class="text-xl text-blue-400 mt-2">New Bot</p>
-              <p class="text-xl text-blue-400">Import Bot</p>
+              <a class="text-xl text-blue-400 mt-2 cursor-pointer hover:underline" href="./pages/create.html">New Bot</a>
+              <a class="text-xl text-blue-400 cursor-pointer hover:underline">Import Bot</a>
             </div>
           </div>
           <div class="flex flex-row ml-48">
             <div class="w-32 h-0 absolute origin-top-left rotate-90 border border-white"></div>
             <div class="flex flex-col ml-4">
               <h1 class="text-3xl">Recent</h1>
-              <div id="recents" class="mt-2 text-xl text-blue-400 ">
-                <button>test</button>
+              <div id="recents" class="mt-2 text-xl text-blue-400 flex flex-col text-right">
               </div>
             </div>
           </div> 
@@ -38,6 +37,7 @@
     <script src="../../dist/web/js/components/componentsMananger.js"></script>
     <script>
       const componentsManager = new ComponentsManager("index");
+      componentsManager.loadComponent("recents");
     </script>
   </body>
 </html>

@@ -1,3 +1,6 @@
+import { existsSync, fsync, mkdirSync } from "fs";
+import path = require("path");
+
 const { app, BrowserWindow } = require('electron');
 
 if (require('electron-squirrel-startup')) app.quit();
@@ -21,13 +24,18 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
-    createWindow()
+    createWindow();
 
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) {
             createWindow()
         }
-    })
+    });
+
+    if (!existsSync(path.join(__dirname, './bot'))) {
+        mkdirSync(path.join(__dirname, './bot'));
+        console.log("Bot folder created");
+    }
 })
 
 app.on('window-all-closed', () => {

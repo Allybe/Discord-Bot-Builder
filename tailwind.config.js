@@ -8,7 +8,9 @@ module.exports = {
       },
       colors: {
         "background": "#121212",
-        "background-1": "#181818"
+        "background-1": "#181818",
+        "text-link": "#82BCFF",
+        "green-button": "#66C661"
       }
     },
   },

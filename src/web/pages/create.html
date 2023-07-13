@@ -10,28 +10,52 @@
 </head>
 
 <body class="w-full h-full font-inter flex flex-row bg-background">
-  <div class="w-2/5 h-full bg-background">
+  <div class="w-1/4 h-full bg-background z-0">
     <div class="flex flex-col left-8 top-11 absolute">
-      <h1 class="text-white font-normal text-3xl font-inter">Discord Bot Builder.</h1>
+      <h1 class="text-white font-normal text-4xl font-inter">Discord Bot Builder.</h1>
       <p class="text-blue-300 mt-3 text-2xl font-normal">Build.</p>
-      <div class="mt-10 flex flex-row">
-        <div class="w-80 h-0 absolute origin-top-left rotate-90 border border-white"></div>
-          <div class="ml-4 flex flex-col">
-            <h2 class=" text-white text-3xl font-normal">Modules</h2>
-            <div class="flex flex-col"> 
-              <div class="flex flex-row mt-3 items-center">
-                <button state="disabled" class="relative bg-green-400 w-5 h-5 rounded-md shadow-md disabled:" id="placeholder"></button>
-                <p class="text-white ml-2 text-xl">Text</p>
-              </div>
+      <div class="mt-10 flex flex-row h-80">
+        <div class="w-64 h-0 absolute origin-top-left rotate-90 border border-white"></div>
+        <div class="ml-4 flex flex-col">
+          <h2 class=" text-white text-3xl font-normal">Modules</h2>
+          <div class="flex flex-col">
+            <div class="flex flex-row mt-3 items-center">
+              <input id="music-module" type="checkbox" value=""
+                class="w-4 h-4 text-green-500 bg-gray-100 border-gray-300 rounded">
+              <label class="text-text-link ml-2 text-xl hover:underline cursor-pointer">Music</label>
+            </div>
+            <div class="flex flex-row mt-3 items-center">
+              <input id="moderation-module" type="checkbox" value=""
+                class="w-4 h-4 text-green-500 bg-gray-100 border-gray-300 rounded">
+              <label class="text-text-link ml-2 text-xl hover:underline cursor-pointer">Moderation</label>
+            </div>
+            <div class="flex flex-row mt-3 items-center">
+              <input id="admin-module" type="checkbox" value=""
+                class="w-4 h-4 text-green-500 bg-gray-100 border-gray-300 rounded">
+              <label class="text-text-link ml-2 text-xl hover:underline cursor-pointer">Admin</label>
+            </div>
+            <div class="flex flex-row mt-3 items-center">
+              <input id="fun-module" type="checkbox" value=""
+                class="w-4 h-4 text-green-500 bg-gray-100 border-gray-300 rounded">
+              <label class="text-text-link ml-2 text-xl hover:underline cursor-pointer">Fun</label>
             </div>
           </div>
+        </div>
       </div>
-      <div class="relative">
-        <p class="text-white">test</p>
+      <div class="mt-8 h-64">
+        <div class="w-64 h-0 origin-top-left rotate-90 border border-white"></div>
+        <div class="ml-4 flex flex-col">
+          <h2 class="text-white text-3xl font-normal">Configuration</h2>
+          <div class="flex flex-col mt-4 text-text-link text-xl [&>p]:ml-3 [&>p]:mt-1 [&>p]:cursor-pointer">
+            <p class="hover:underline">Discord</p>
+            <p class="hover:underline">YouTube API</p>
+            <p class="hover:underline">Spotify API</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="w-3/5 h-full bg-background-1">
+  <div class="w-3/4 h-full bg-background-1 z-10">
 
   </div>
 </body>

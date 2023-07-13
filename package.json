@@ -14,7 +14,7 @@
     "url": "git+https://github.com/Allybe/Discord-Bot-Builder.git"
   },
   "author": "Allison",
-  "license": "MIT",
+  "license": "GNU General Public License v3.0",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Allybe/Discord-Bot-Builder/issues"

@@ -6,7 +6,6 @@
         "**/CVS": true,
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
-        "README.md": true,
         "package-lock.json": true,
         "node_modules": true,
         ".github": true,
@@ -15,7 +14,6 @@
         "LICENSE": true
     },
     "hide-files.files": [
-        "README.md",
         "package-lock.json",
         "node_modules",
         ".github",

@@ -36,6 +36,10 @@ app.whenReady().then(() => {
         mkdirSync(path.join(__dirname, './bot'));
         console.log("Bot folder created");
     }
+    if (!existsSync(path.join(__dirname, './asset'))) {
+        mkdirSync(path.join(__dirname, './asset'));
+        console.log("Assets folder created");
+    }
 })
 
 app.on('window-all-closed', () => {

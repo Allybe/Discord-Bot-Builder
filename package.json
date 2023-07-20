@@ -1,7 +1,7 @@
 {
   "name": "discord-bot-builder",
   "version": "0.0.1",
-  "description": "A powerful peice of software to help make Discord bots easier.",
+  "description": "A powerful piece of software to help make Discord bots easier.",
   "main": "dist/index.js",
   "scripts": {
     "start": "npx tailwindcss -i ./src/web/css/input.css -o ./src/web/css/output.css && tsc && electron-forge start",
@@ -35,6 +35,9 @@
   "dependencies": {
     "@electron-forge/maker-dmg": "^6.2.1",
     "@types/node": "^20.4.0",
-    "electron-squirrel-startup": "^1.0.0"
+    "download": "^8.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "ncp": "^2.0.0",
+    "unzipper": "^0.10.14"
   }
 }

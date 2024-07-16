@@ -1,7 +1,8 @@
-import { existsSync, fsync, mkdirSync } from "fs";
-import path = require("path");
-
-const { app, BrowserWindow } = require('electron');
+import { existsSync, mkdirSync } from "fs";
+import path from "path";
+import { app, BrowserWindow, ipcMain } from 'electron';
+import { BotSettings } from "./scripts/interfaces/botSettings";
+import { createBot } from "./scripts/createBot"
 
 if (require('electron-squirrel-startup')) app.quit();
 
@@ -12,12 +13,8 @@ function createWindow() {
         width: width,
         height: height,
         webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false,
-            enableRemoteModule: true,
-            webSecurity: false,
-            nodeIntegrationInWorker: true,
-        },
+            preload: path.join(__dirname, 'preload.js')
+          }
     });
 
     win.loadFile('src/web/index.html');
@@ -47,3 +44,15 @@ app.on('window-all-closed', () => {
         app.quit()
     }
 })
+
+//IPC
+
+ipcMain.on("createBot", (event, args: BotSettings) => {
+    createBot(args);
+});
+
+ipcMain.on("changePage", (event, args: string) => {
+    console.log("Changing page to " + args);
+    event.sender.loadFile('src/web/' + args + '.html');
+});
+

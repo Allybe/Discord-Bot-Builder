@@ -13,6 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/Allybe/Discord-Bot-Builder.git"
   },
+  "preload": {
+    "js": "./src/preload.ts"
+  },
   "author": "Allison",
   "license": "GNU General Public License v3.0",
   "type": "commonjs",
@@ -27,6 +30,9 @@
     "@electron-forge/maker-squirrel": "^6.2.1",
     "@electron-forge/maker-zip": "^6.2.1",
     "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
+    "@types/download": "^8.0.5",
+    "@types/ncp": "^2.0.8",
+    "@types/unzipper": "^0.10.9",
     "electron": "^25.1.1",
     "electron-is-dev": "^2.0.0",
     "tailwindcss": "^3.3.2",

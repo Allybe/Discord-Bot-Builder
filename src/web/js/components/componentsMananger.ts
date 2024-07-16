@@ -3,6 +3,7 @@ import { Command } from "../interfaces/component.js";
 import { join } from "path";
 
 export default class ComponentsManager {
+  //because the world needed another component manager
   componentsCollection: Map<String, Command> = new Map<string, any>();
 
   constructor(componentsCollection: string) {

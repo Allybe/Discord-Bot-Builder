@@ -43,6 +43,7 @@
     "@types/node": "^20.4.0",
     "download": "^8.0.0",
     "electron-squirrel-startup": "^1.0.0",
+    "got": "^9.6.0",
     "ncp": "^2.0.0",
     "unzipper": "^0.10.14"
   }

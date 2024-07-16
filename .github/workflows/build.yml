@@ -69,6 +69,11 @@ jobs:
         with:
           node-version: 16
 
+      - name: Install Python 3.11.4
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11.4'
+
       - name: Install dependencies
         run: npm install
 

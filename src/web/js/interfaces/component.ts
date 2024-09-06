@@ -1,4 +1,4 @@
-export interface Command {
+export interface Component {
   targetId: string;
   elementType: string;
   data: () => any;

@@ -1,14 +1,15 @@
-import { existsSync, readdirSync } from "fs";
-import { Command } from "../../interfaces/component.js";
-import { join } from "path";
-export const component: Command = {
+import fs = require("fs");
+import IComponent =  require("../../interfaces/component.js");
+import path = require("path");
+
+export const recentsComponent: IComponent.Component = {
   targetId: "recents",
   elementType: "button",
   data: () => {
-    var path = join(__dirname, "../../../../bot");
-    var dirFiles: string[];
-    if (existsSync(path)) {
-      dirFiles = readdirSync(path, { withFileTypes: true })
+    let botPath = path.join(__dirname, "../../../../bot");
+    let dirFiles: string[];
+    if (fs.existsSync(botPath)) {
+      dirFiles = fs.readdirSync(botPath, { withFileTypes: true })
         .filter((dirent) => dirent.isDirectory())
         .map((dirent) => dirent.name);
     }

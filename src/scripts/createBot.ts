@@ -1,15 +1,14 @@
-import { BotSettings } from "./interfaces/botSettings";
-
-import unzipper from "unzipper";
-import download from "download";
-import fs from "fs";
-import path from "path";
-import ncp from 'ncp';
+import DefaultConfigs = require("./interfaces/botSettings");
+import unzipper = require("unzipper");
+import download = require("download");
+import fs = require("fs");
+import path = require("path");
+import ncp = require('ncp');
 
 const url = 'https://github.com/Allybe/DBB-BotScripts/releases/latest/download/distribution.zip';
 const filePath = __dirname + "../../../../dist/asset/";
 
-export const createBot = (settings: BotSettings ) => {
+export const createBot = (settings: DefaultConfigs.BotSettings ) => {
     console.log("Download starting");
 
     download(url, filePath)
@@ -19,7 +18,7 @@ export const createBot = (settings: BotSettings ) => {
         });
 }
 
-const unzipFile = (filePath, settings: BotSettings) => {
+const unzipFile = (filePath, settings: DefaultConfigs.BotSettings) => {
     fs.createReadStream(filePath)
         .pipe(unzipper.Extract({ path: './dist/asset/' }))
         .on('finish', () => {
@@ -32,7 +31,7 @@ const unzipFile = (filePath, settings: BotSettings) => {
         });
 };
 
-const copyScripts = (settings: BotSettings) => {
+const copyScripts = (settings: DefaultConfigs.BotSettings) => {
     let srcDir = path.join(__dirname, "../../../dist/asset");
     let destDir = path.join(__dirname, "../../../dist/bot/", settings.name);
 
@@ -50,7 +49,7 @@ const copyScripts = (settings: BotSettings) => {
     });
 };
 
-const createConfigFile = (settings: BotSettings) => { 
+const createConfigFile = (settings: DefaultConfigs.BotSettings) => { 
     let config = {
         name: settings.name,
         token: settings.token,

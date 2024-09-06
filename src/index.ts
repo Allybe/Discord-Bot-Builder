@@ -1,15 +1,15 @@
-import { existsSync, mkdirSync } from "fs";
-import path from "path";
-import { app, BrowserWindow, ipcMain } from 'electron';
-import { BotSettings } from "./scripts/interfaces/botSettings";
-import { createBot } from "./scripts/createBot"
+import fs = require("fs");
+import path =  require("path");
+import electronMain = require("electron");
+import DefaultConfigs = require("./scripts/interfaces/botSettings");
+import BotCreation = require("./scripts/createBot");
 
-if (require('electron-squirrel-startup')) app.quit();
+if (require('electron-squirrel-startup')) electronMain.app.quit();
 
 function createWindow() {
-    const { width, height } = require('electron').screen.getPrimaryDisplay().workAreaSize;
+    const { width, height } = electronMain.screen.getPrimaryDisplay().workAreaSize;
 
-    const win = new BrowserWindow({
+    const win = new electronMain.BrowserWindow({
         width: width,
         height: height,
         webPreferences: {
@@ -20,39 +20,40 @@ function createWindow() {
     win.loadFile('src/web/index.html');
 }
 
-app.whenReady().then(() => {
+electronMain.app.whenReady().then(() => {
     createWindow();
 
-    app.on('activate', () => {
-        if (BrowserWindow.getAllWindows().length === 0) {
+    electronMain.app.on('activate', () => {
+        if (electronMain.BrowserWindow.getAllWindows().length === 0) {
             createWindow()
         }
     });
 
-    if (!existsSync(path.join(__dirname, './bot'))) {
-        mkdirSync(path.join(__dirname, './bot'));
+    if (!fs.existsSync(path.join(__dirname, './bot'))) {
+        fs.mkdirSync(path.join(__dirname, './bot'));
         console.log("Bot folder created");
     }
-    if (!existsSync(path.join(__dirname, './asset'))) {
-        mkdirSync(path.join(__dirname, './asset'));
+    if (!fs.existsSync(path.join(__dirname, './asset'))) {
+        fs.mkdirSync(path.join(__dirname, './asset'));
         console.log("Assets folder created");
     }
 })
 
-app.on('window-all-closed', () => {
+electronMain.app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
-        app.quit()
+        electronMain.app.quit()
     }
 })
 
 //IPC
 
-ipcMain.on("createBot", (event, args: BotSettings) => {
-    createBot(args);
+electronMain.ipcMain.on("createBot", (event, args: DefaultConfigs.BotSettings) => {
+    BotCreation.createBot(args);
 });
 
-ipcMain.on("changePage", (event, args: string) => {
+electronMain.ipcMain.on("changePage", (event, args: string) => {
     console.log("Changing page to " + args);
-    event.sender.loadFile('src/web/' + args + '.html');
+    //TODO: gotta make sure this doesn't cause an include exploit thingy
+    event.sender.loadFile('src/web/pages/' + args + '.html');
 });
 

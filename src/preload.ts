@@ -1,19 +1,18 @@
-import { BotSettings } from "./scripts/interfaces/botSettings";
-
-import { contextBridge, ipcRenderer } from "electron/renderer";
+import DefaultConfigs = require("./scripts/interfaces/botSettings");
+import ElectronRender = require("electron/renderer");
 
 type api = {
-  createDiscordBot: (settings: BotSettings) => void;
+  createDiscordBot: (settings: DefaultConfigs.BotSettings) => void;
   changePage: (page: string) => void;
 };
 
 const api: api = {
-  createDiscordBot: (settings: BotSettings) =>
-    ipcRenderer.send("createBot", settings),
-  changePage: (page: string) => ipcRenderer.send("changePage", page),
+  createDiscordBot: (settings: DefaultConfigs.BotSettings) =>
+    ElectronRender.ipcRenderer.send("createBot", settings),
+  changePage: (page: string) => ElectronRender.ipcRenderer.send("changePage", page),
 };
 
-contextBridge.exposeInMainWorld("api", api);
+ElectronRender.contextBridge.exposeInMainWorld("api", api);
 
 declare global {
   interface Window {

@@ -1,20 +1,20 @@
-import { readdirSync } from "fs";
-import { Command } from "../interfaces/component.js";
-import { join } from "path";
+import fs = require("fs");
+import IComponent = require("../interfaces/component.js");
+import path = require("path");
 
 export default class ComponentsManager {
   //because the world needed another component manager
-  componentsCollection: Map<String, Command> = new Map<string, any>();
+  componentsCollection: Map<String, IComponent.Component> = new Map<string, any>();
 
   constructor(componentsCollection: string) {
-    var botDirPath = join(
+    var botDirPath = path.join(
       __dirname,
       `../../dist/web/js/components/${componentsCollection}`
     );
 
-    readdirSync(botDirPath).forEach((file: string) => {
+    fs.readdirSync(botDirPath).forEach((file: string) => {
       var componentName = file.split(".")[0];
-      var componentPath = join(
+      var componentPath = path.join(
         __dirname,
         `../../dist/web/js/components/${componentsCollection}/${file}`
       );
@@ -28,7 +28,7 @@ export default class ComponentsManager {
       console.log(`Component ${componentName} not found`);
       return;
     }
-    var component: Command = this.componentsCollection.get(componentName);
+    var component: IComponent.Component = this.componentsCollection.get(componentName);
     var data: any[] = component.data();
     var element = document.getElementById(component.targetId);
 

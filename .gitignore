@@ -9,4 +9,6 @@ src/web/css/output.css
 
 # IDE
 .vscode/
+.idea
+
 

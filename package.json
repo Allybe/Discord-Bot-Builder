@@ -40,11 +40,15 @@
   },
   "dependencies": {
     "@electron-forge/maker-dmg": "^6.2.1",
-    "@types/node": "^20.4.0",
+    "@types/node": "^20.17.19",
     "download": "^8.0.0",
     "electron-squirrel-startup": "^1.0.0",
-    "got": "^9.6.0",
+    "got": "^14.4.6",
     "ncp": "^2.0.0",
+    "pm2": "^6.0.5",
     "unzipper": "^0.10.14"
+  },
+  "overrides": {
+    "@types/cacheable-request": "8.3.1"
   }
 }

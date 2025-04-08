@@ -2,7 +2,9 @@ import fs = require("fs");
 import path =  require("path");
 import electronMain = require("electron");
 import DefaultConfigs = require("./scripts/interfaces/botSettings");
-import BotCreation = require("./scripts/createBot");
+import BotManagement = require("./scripts/createBot");
+import pm2 = require("pm2");
+
 
 if (require('electron-squirrel-startup')) electronMain.app.quit();
 
@@ -48,7 +50,7 @@ electronMain.app.on('window-all-closed', () => {
 //IPC
 
 electronMain.ipcMain.on("createBot", (event, args: DefaultConfigs.BotSettings) => {
-    BotCreation.createBot(args);
+    BotManagement.createBot(args);
 });
 
 electronMain.ipcMain.on("changePage", (event, args: string) => {
@@ -56,4 +58,8 @@ electronMain.ipcMain.on("changePage", (event, args: string) => {
     //TODO: gotta make sure this doesn't cause an include exploit thingy
     event.sender.loadFile('src/web/pages/' + args + '.html');
 });
+
+electronMain.ipcMain.on("startBot", (event, args: string) => {
+
+})
 

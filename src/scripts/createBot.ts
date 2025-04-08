@@ -18,6 +18,10 @@ export const createBot = (settings: DefaultConfigs.BotSettings ) => {
         });
 }
 
+export const startBot = (settings: DefaultConfigs.BotSettings ) => {
+    console.log("Starting bot");
+}
+
 const unzipFile = (filePath, settings: DefaultConfigs.BotSettings) => {
     fs.createReadStream(filePath)
         .pipe(unzipper.Extract({ path: './dist/asset/' }))

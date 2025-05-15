@@ -1,4 +1,5 @@
-import { app } from "electron";
+import {app} from "electron";
+import * as fs from "node:fs";
 
 export class Utils {
     public static getBotsPath() {
@@ -13,7 +14,13 @@ export class Utils {
         return app.getPath('temp');
     }
 
-    public static getValidBots() {
+    public static getValidBots(): string[] {
+        if (fs.existsSync(this.getBotsPath())) {
+            return fs.readdirSync(this.getBotsPath(), {withFileTypes: true})
+                .filter((dirent) => dirent.isDirectory())
+                .map((dirent) => dirent.name);
+        }
 
+        return [];
     }
 }

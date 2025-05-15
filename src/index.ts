@@ -62,27 +62,24 @@ electronMain.ipcMain.on("createBot", (event, args: DefaultConfigs.BotSettings) =
     BotManagement.createBot(args);
 });
 
-// electronMain.ipcMain.on("changePage", (event, args: string) => {
-//     console.log("Changing page to " + args);
-//     event.sender.loadFile('src/web/pages/' + args + '.html');
-// });
+electronMain.ipcMain.on("changeToBotManagementPage", (event, botName: string) => {
+    event.sender.loadFile('src/web/pages/bot.html').then(r => {
 
-electronMain.ipcMain.on("changeToBotManagementPage", (event, args: string) => {
-
+    });
 })
 
-electronMain.ipcMain.on("startBot", (event, args: BotSettings) => {
+electronMain.ipcMain.on("startBot", (event, botName: string) => {
     pm2.connect(function(err) {
         if (err) {
             console.error(err);
             return;
         }
 
-        let botPath = path.join(Utils.getBotsPath(), args.name);
+        let botPath = path.join(Utils.getBotsPath(), botName);
 
         pm2.start({
             script: '',
-            name: args.name,
+            name: botName,
         }, function (err, result) {
             if (err) {
                 console.error(err);

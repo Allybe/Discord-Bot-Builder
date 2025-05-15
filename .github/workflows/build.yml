@@ -30,7 +30,7 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Build
+          name: Windows Build
           path: out/beta/make/squirrel.windows/x64/DBBSetup.exe
 
   build-linux:
@@ -54,7 +54,7 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Build
+          name: Linux Build
           path: out/
 
   build-mac:
@@ -83,5 +83,5 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Build
+          name: Mac Build
           path: out/

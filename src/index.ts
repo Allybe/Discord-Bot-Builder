@@ -4,7 +4,8 @@ import electronMain = require("electron");
 import DefaultConfigs = require("./scripts/interfaces/botSettings");
 import BotManagement = require("./scripts/createBot");
 import pm2 = require("pm2");
-
+import {BotSettings} from "./scripts/interfaces/botSettings";
+import {Utils} from "./scripts/utils";
 
 if (require('electron-squirrel-startup')) electronMain.app.quit();
 
@@ -31,12 +32,12 @@ electronMain.app.whenReady().then(() => {
         }
     });
 
-    if (!fs.existsSync(path.join(__dirname, './bot'))) {
-        fs.mkdirSync(path.join(__dirname, './bot'));
+    if (!fs.existsSync(Utils.getBotsPath())) {
+        fs.mkdirSync(Utils.getBotsPath());
         console.log("Bot folder created");
     }
-    if (!fs.existsSync(path.join(__dirname, './asset'))) {
-        fs.mkdirSync(path.join(__dirname, './asset'));
+    if (!fs.existsSync(Utils.getAssetsPath())) {
+        fs.mkdirSync(Utils.getAssetsPath());
         console.log("Assets folder created");
     }
 })
@@ -47,19 +48,47 @@ electronMain.app.on('window-all-closed', () => {
     }
 })
 
+pm2.connect((err) => {
+    if (err) {
+        console.log(err);
+        //TODO: Research error logging libs
+    }
+})
+
 //IPC
 
 electronMain.ipcMain.on("createBot", (event, args: DefaultConfigs.BotSettings) => {
+    console.log(args)
     BotManagement.createBot(args);
 });
 
-electronMain.ipcMain.on("changePage", (event, args: string) => {
-    console.log("Changing page to " + args);
-    //TODO: gotta make sure this doesn't cause an include exploit thingy
-    event.sender.loadFile('src/web/pages/' + args + '.html');
-});
+// electronMain.ipcMain.on("changePage", (event, args: string) => {
+//     console.log("Changing page to " + args);
+//     event.sender.loadFile('src/web/pages/' + args + '.html');
+// });
 
-electronMain.ipcMain.on("startBot", (event, args: string) => {
+electronMain.ipcMain.on("changeToBotManagementPage", (event, args: string) => {
 
+})
+
+electronMain.ipcMain.on("startBot", (event, args: BotSettings) => {
+    pm2.connect(function(err) {
+        if (err) {
+            console.error(err);
+            return;
+        }
+
+        let botPath = path.join(Utils.getBotsPath(), args.name);
+
+        pm2.start({
+            script: '',
+            name: args.name,
+        }, function (err, result) {
+            if (err) {
+                console.error(err);
+                return pm2.disconnect();
+            }
+        })
+    })
 })
 

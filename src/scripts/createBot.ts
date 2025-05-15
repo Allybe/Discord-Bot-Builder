@@ -1,30 +1,27 @@
 import DefaultConfigs = require("./interfaces/botSettings");
+import { app } from 'electron';
 import unzipper = require("unzipper");
 import download = require("download");
 import fs = require("fs");
 import path = require("path");
 import ncp = require('ncp');
+import {Utils} from "./utils";
 
 const url = 'https://github.com/Allybe/DBB-BotScripts/releases/latest/download/distribution.zip';
-const filePath = __dirname + "../../../../dist/asset/";
 
 export const createBot = (settings: DefaultConfigs.BotSettings ) => {
     console.log("Download starting");
 
-    download(url, filePath)
+    download(url, Utils.getTempPath())
         .then(() => {
             console.log('Download Completed, unzipping');
-            unzipFile(filePath + "distribution.zip", settings);
+            unzipFile(Utils.getTempPath() + "/distribution.zip", settings);
         });
 }
 
-export const startBot = (settings: DefaultConfigs.BotSettings ) => {
-    console.log("Starting bot");
-}
-
-const unzipFile = (filePath, settings: DefaultConfigs.BotSettings) => {
+const unzipFile = (filePath: string, settings: DefaultConfigs.BotSettings) => {
     fs.createReadStream(filePath)
-        .pipe(unzipper.Extract({ path: './dist/asset/' }))
+        .pipe(unzipper.Extract({ path: Utils.getAssetsPath() }))
         .on('finish', () => {
             console.log('File unzipped successfully.');
             fs.unlinkSync(filePath);
@@ -36,8 +33,9 @@ const unzipFile = (filePath, settings: DefaultConfigs.BotSettings) => {
 };
 
 const copyScripts = (settings: DefaultConfigs.BotSettings) => {
-    let srcDir = path.join(__dirname, "../../../dist/asset");
-    let destDir = path.join(__dirname, "../../../dist/bot/", settings.name);
+    let srcDir = Utils.getAssetsPath();
+    let destDir = path.join(Utils.getBotsPath(), settings.name);
+    console.log(destDir.toString())
 
     if (!fs.existsSync(destDir)){
         console.log("Creating directory");
@@ -48,8 +46,11 @@ const copyScripts = (settings: DefaultConfigs.BotSettings) => {
         if (err) {
             return console.error(err);
         }
-        console.log('Copied directory!');
-        createConfigFile(settings);
+        // NCP ALLOWS CALLBACK TO RUN EVEN WITHOUT FINISHING, DELAY FOR MAKING SURE WE COPY EVERYTHING
+        setTimeout(() =>{
+            console.log('Copied directory!');
+            createConfigFile(settings);
+        }, 1000);
     });
 };
 
@@ -59,7 +60,5 @@ const createConfigFile = (settings: DefaultConfigs.BotSettings) => {
         token: settings.token,
         clientId: settings.clientId
     }
-    fs.writeFileSync(__dirname + "../../../dist/bot/" + settings.name + "/config.json", JSON.stringify(config));
-
-    
+    fs.writeFileSync(path.join(Utils.getBotsPath(), settings.name, "config.json"), JSON.stringify(config));
 };

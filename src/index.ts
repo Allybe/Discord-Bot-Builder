@@ -4,7 +4,6 @@ import electronMain = require("electron");
 import DefaultConfigs = require("./scripts/interfaces/botSettings");
 import BotManagement = require("./scripts/createBot");
 import pm2 = require("pm2");
-import {BotSettings} from "./scripts/interfaces/botSettings";
 import {Utils} from "./scripts/utils";
 
 if (require('electron-squirrel-startup')) electronMain.app.quit();

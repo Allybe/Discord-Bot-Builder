@@ -1,7 +1,5 @@
-
 import ElectronRender = require("electron/renderer");
 import { BotSettings } from "./scripts/interfaces/botSettings";
-import {Utils} from "./scripts/utils";
 
 type api = {
   createDiscordBot: (settings: BotSettings) => void;

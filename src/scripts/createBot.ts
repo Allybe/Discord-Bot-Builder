@@ -1,16 +1,20 @@
 import DefaultConfigs = require("./interfaces/botSettings");
-import { app } from 'electron';
 import unzipper = require("unzipper");
 import download = require("download");
-import fs = require("fs");
+import fs = require("fs-extra");
 import path = require("path");
-import ncp = require('ncp');
 import {Utils} from "./utils";
 
 const url = 'https://github.com/Allybe/DBB-BotScripts/releases/latest/download/distribution.zip';
 
 export const createBot = (settings: DefaultConfigs.BotSettings ) => {
     console.log("Download starting");
+
+    if (fs.existsSync(Utils.getAssetsPath()) && fs.readdirSync(Utils.getAssetsPath()).length != 0) {
+        //TODO: Add version checking for the bot assets
+        copyScripts(settings);
+        return;
+    }
 
     download(url, Utils.getTempPath())
         .then(() => {
@@ -35,23 +39,14 @@ const unzipFile = (filePath: string, settings: DefaultConfigs.BotSettings) => {
 const copyScripts = (settings: DefaultConfigs.BotSettings) => {
     let srcDir = Utils.getAssetsPath();
     let destDir = path.join(Utils.getBotsPath(), settings.name);
-    console.log(destDir.toString())
 
     if (!fs.existsSync(destDir)){
         console.log("Creating directory");
         fs.mkdirSync(destDir, { recursive: true });
     }
 
-    ncp(srcDir, destDir, (err) => {
-        if (err) {
-            return console.error(err);
-        }
-        // NCP ALLOWS CALLBACK TO RUN EVEN WITHOUT FINISHING, DELAY FOR MAKING SURE WE COPY EVERYTHING
-        setTimeout(() =>{
-            console.log('Copied directory!');
-            createConfigFile(settings);
-        }, 1000);
-    });
+    fs.copySync(srcDir, destDir);
+    createConfigFile(settings);
 };
 
 const createConfigFile = (settings: DefaultConfigs.BotSettings) => { 

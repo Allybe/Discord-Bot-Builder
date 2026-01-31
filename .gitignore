@@ -6,9 +6,10 @@ package-lock.json
 out/
 dist/
 src/web/css/output.css
+obj
+bin
 
 # IDE
 .vscode/
 .idea
-
 

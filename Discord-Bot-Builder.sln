@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discord-Bot-Builder", "Discord-Bot-Builder.csproj", "{EDBC2925-384E-EA3E-9D0D-CF13EC14821B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discord Bot Builder", "Discord Bot Builder\Discord Bot Builder.csproj", "{6F0A0AD9-451D-FBA4-1DBD-D54FAC80A6BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,15 +10,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EDBC2925-384E-EA3E-9D0D-CF13EC14821B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EDBC2925-384E-EA3E-9D0D-CF13EC14821B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EDBC2925-384E-EA3E-9D0D-CF13EC14821B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EDBC2925-384E-EA3E-9D0D-CF13EC14821B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F0A0AD9-451D-FBA4-1DBD-D54FAC80A6BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F0A0AD9-451D-FBA4-1DBD-D54FAC80A6BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F0A0AD9-451D-FBA4-1DBD-D54FAC80A6BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F0A0AD9-451D-FBA4-1DBD-D54FAC80A6BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2A372022-DC04-4486-9769-9AF327390745}
+		SolutionGuid = {D95DE07E-D0A1-44F4-82C1-4B88ABD58911}
 	EndGlobalSection
 EndGlobal

@@ -1,15 +1,48 @@
-# Node Modules
-node_modules
-package-lock.json
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
 
-# Build Files
-out/
-dist/
-src/web/css/output.css
-obj
-bin
+# Build results
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+arm/
+arm64/
+
+# NuGet Packages
+**/packages/*
+!**/packages/build/
+
+# NuGet metadata
+*.nupkg
+*.snupkg
+*.nuget.props
+*.nuget.targets
 
 # IDE
-.vscode/
-.idea
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+node_modules/
 
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/   

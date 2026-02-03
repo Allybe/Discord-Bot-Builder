@@ -1,0 +1,70 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="720"
+        Width="1280"
+        Height="720"
+        CanResize="False"
+        x:Class="Discord_Bot_Builder.MainWindow"
+        Background="#121212"
+        Title="Bot Builder"
+        Foreground="White">
+        <Grid Classes="AccentColor" Width="1280" Height="720" ColumnDefinitions="430, 425, 425">
+            <Border Grid.Column="0" 
+                    ZIndex="1" 
+                    Background="#17D9D9D9"
+                    BoxShadow="10 0 5 0 #40000000"> 
+                <StackPanel Height="720" Width="430">
+                    <TextBlock 
+                        Text="Docs"
+                        Classes="BigTitle"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Top"/>
+                    <TextBlock 
+                        Text="BOT BUILDER" 
+                        Classes="BotBuilderText"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom">
+                        <TextBlock.RenderTransform>
+                            <RotateTransform Angle="-90" />
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="1" 
+                    BorderThickness="0,0,2,0" 
+                    BorderBrush="White"
+                    >
+                <StackPanel Height="720" Spacing="0">
+                    <TextBlock 
+                        Text="Create" 
+                        Classes="BigTitle"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Top"/>
+                    <Border Classes="ButtonTopBottomBorder" Margin="47,25,47,55">
+                        <TextBlock
+                            Text="Create new bot..."
+                            HorizontalAlignment="Center"
+                            Classes="StartWindowButtonText"/>
+                    </Border>
+                    <Border Classes="ButtonTopBottomBorder">
+                        <TextBlock
+                            Text="Edit existing bot..."
+                            HorizontalAlignment="Center"
+                            Classes="StartWindowButtonText"/>
+                    </Border>
+                </StackPanel>
+            </Border>
+        
+            <StackPanel Grid.Column="2" Height="720">
+                <TextBlock 
+                    Text="Recents" 
+                    Classes="BigTitle"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Top"/>
+                <Border>
+                </Border>
+            </StackPanel>
+        </Grid>
+</Window>

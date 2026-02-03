@@ -1,8 +1,0 @@
-<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2001/xaml">
-    
-    <Style Selector="StackPanel.AccentColor">
-        <Setter Property="Background" Value="#1C2522"/>
-    </Style>
-    
-</Styles>

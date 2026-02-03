@@ -1,0 +1,36 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2001/xaml">
+    
+    <Style Selector="Grid.AccentColor">
+        <Setter Property="Background" Value="#1C2522"/>
+    </Style>
+    
+    <Style Selector="TextBlock.BigTitle">
+        <Setter Property="FontSize" Value="64"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="0 36 0 0 "/>
+        <Setter Property="FontFamily" Value="{StaticResource JostFont}"/>
+    </Style>
+    
+    <Style Selector="Border.ButtonTopBottomBorder">
+        <Setter Property="Padding" Value="0 15 0 15"/>
+        <Setter Property="BorderThickness" Value="0, 2 ,0,2"/>
+        <Setter Property="BorderBrush" Value="White"/>
+        <Setter Property="Margin" Value="47,0,47,55"/>
+    </Style>
+    
+    <Style Selector="TextBlock.StartWindowButtonText">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="FontFamily" Value="{StaticResource JostFont}"/>
+    </Style>
+    
+    <Style Selector="TextBlock.BotBuilderText">
+        <Setter Property="Foreground" Value="#1C2522"/>
+        <Setter Property="FontSize" Value="96"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontFamily" Value="{StaticResource JostFont}"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+    </Style>
+    
+</Styles>
